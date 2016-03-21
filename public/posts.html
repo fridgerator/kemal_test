@@ -1,0 +1,21 @@
+<div class="pad" ng-repeat="post in postsCtrl.posts">
+	<div class="post">
+		<div class="delete" ng-click="postsCtrl.deletePost(post)">x</div>
+		<div>{{post.title}}</div>
+		<div>{{post.body}}</div>
+	</div>
+</div>
+
+<div class="pad">
+	<form ng-submit="postsCtrl.submitPost()">
+		<div>
+			<input type="text" ng-model="postsCtrl.post.title" placeholder="title"></input>
+		</div>
+		<div>
+			<textarea ng-model="postsCtrl.post.body" placeholder="body"></textarea>
+		</div>
+		<div>
+			<input type="submit"></input>
+		</div>
+	</form>
+</div>

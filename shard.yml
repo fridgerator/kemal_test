@@ -1,0 +1,17 @@
+name: kemal_test
+version: 0.1.0
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    branch: master
+  active_record:
+    github: waterlink/active_record.cr
+    version: 0.3.0
+  postgres_adapter:
+    github: waterlink/postgres_adapter.cr
+
+authors:
+  - Nick Franken <shnick@gmail.com>
+
+license: MIT
