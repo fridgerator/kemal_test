@@ -13,10 +13,6 @@
 		.when('/posts', {
 			templateUrl: 'posts.html',
 			controller: 'PostsController as postsCtrl'
-		})
-		.when('/posts/:id', {
-			templateUrl: 'post.html',
-			controller: 'PostController as postCtrl'
 		});
 	});
 
@@ -32,7 +28,6 @@
 
 		vm.submitPost = function(){
 			vm.post.$save().then(function(post){
-				console.log('post : ', post);
 				vm.posts.push(post);
 				vm.post = new Post;
 			});
@@ -41,17 +36,11 @@
 		vm.deletePost = function(post){
 			var index = vm.posts.indexOf(post);
 			post.$delete({id: post.id}).then(function(response){
-				console.log(response);
 				vm.posts.splice(index, 1);
 			});
 		}
 	});
 
-	app.controller('PostController', function($scope, $routeParams, Post){
-		var vm = this;
-
-		vm.post = Post.get({id: $routeParams.id});
-	});
 })();
 
 
